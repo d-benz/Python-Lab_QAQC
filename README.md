@@ -191,20 +191,24 @@ The notebook will:
 
 ## Output
 
-- QC summary tables (not exported)  
-- Short descriptive QC narrative (not exported)
+- QC summary tables (not automatically exported)  
+- Short descriptive QC narrative (not automatically exported)
 - CRM Recovery, Duplicate RPD, and blank QC plots (saved to a output folder)
 
 These outputs support internal QA/QC review and help explorers learn how to interpret laboratory QC.
+The interpretation text output cell can be copied and pasted directly into a report or made into an appendix.
+
+Don't forget to add your conclusion and insights about the data!
 
 ---
 
 # Future improvements
 
 - Batch evaluation of multiple QC spreadsheets  
-- Expanded digestion‑method libraries  
-- Batch‑level QC statistics  
-- Multi‑lab dataset support  
+- Expanded digestion‑method and matrix libraries  
+- Testing & updates for other lab output formats  
+- Multi‑lab dataset support
+- Streamline interpretation
 
 ---
 
