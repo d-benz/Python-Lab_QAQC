@@ -6,7 +6,7 @@ Internal lab QC is essential for assessing the reliability of assay results, yet
 
 This coding companion evaluates **one QC spreadsheet at a time**, reflecting the structure of most assay certificates. It is well suited to small exploration programs, early‑stage projects, and educational use where explorers want to learn how to interpret laboratory QC more consistently. The `interpretation.py` module generates a concise, descriptive narrative to support internal documentation and learning.
 
-This workflow does **not** replace internal laboratory QA/QC validation procedures, professional judgement, or Qualified Person (QP) oversight. The narrative output is **educational**, **descriptive**, and **non‑prescriptive**. Users remain responsible for all technical interpretations, conlusions, and decisions.
+This workflow does **not** replace internal laboratory QA/QC validation procedures, professional judgement, or Qualified Person (QP) oversight. The narrative output is **educational**, **descriptive**, and **non‑prescriptive**. Users remain responsible for all technical interpretations, conclusions, and decisions.
 
 ---
 
