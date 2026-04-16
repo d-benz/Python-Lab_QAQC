@@ -11,7 +11,14 @@ def load_metadata_block(path, sheet):
     Row 5: Detection Limit
     Row 6: Analysis Method
     """
-    meta_raw = pd.read_excel(path, sheet_name=sheet, nrows=6, header=None)
+    try:
+        meta_raw = pd.read_excel(path, sheet_name=sheet, nrows=6, header=None)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Excel file not found: {path}")
+    except ValueError as e:
+        if "Worksheet" in str(e):
+            raise ValueError(f"Sheet '{sheet}' not found in {path}")
+        raise
     return meta_raw
 
 
@@ -56,12 +63,19 @@ def load_qc_block(path, sheet="QC"):
     Load the QC data block starting at row 7 (skip first 6 rows).
     No header row in the QC block, so header=None.
     """
-    df_qc = pd.read_excel(
-        path,
-        sheet_name=sheet,
-        skiprows=6,
-        header=None,
-    )
+    try:
+        df_qc = pd.read_excel(
+            path,
+            sheet_name=sheet,
+            skiprows=6,
+            header=None,
+        )
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Excel file not found: {path}")
+    except ValueError as e:
+        if "Worksheet" in str(e):
+            raise ValueError(f"Sheet '{sheet}' not found in {path}")
+        raise
     return df_qc
 
 

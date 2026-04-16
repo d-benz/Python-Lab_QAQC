@@ -1,0 +1,75 @@
+qc_settings:
+  crm_low_tol: 80.0
+  crm_high_tol: 120.0
+  duplicate_rpd_tol: 30.0
+  duplicate_rpd_bdl_tol: 50.0
+  blank_tol_factor: 3.0
+  bdl_sub_rule: "half"
+
+valid_method_codes:
+  - "AR-ICPMS"
+  - "AR-ICPOES"
+  - "4-Acid"
+  - "FA-AAS"
+  - "FA-ICP"
+  - "PhotonAssay"
+  - "INAA"
+
+valid_matrix_types:
+  - "rock"
+  - "soil"
+  - "till"
+  - "vegetation"
+  - "talus"
+  - "stream sediment"
+  - "lake sediment"
+
+plot_colors:
+  OK: "#56B4E9"
+  Fail: "#E69F00"
+  Fail_RPD: "#E69F00"
+  NeedsInvestigation: "#F0E442"
+  BDL_Substitution: "#56B4E9"
+  NotApplicable: "#999999"
+  NotEvaluated: "#000000"
+  Line: "#E69F00"
+
+status_map:
+  OK: "OK"
+  Fail: "Fail"
+  Fail_RPD: "Fail_RPD"
+  BDL_Substitution: "BDL_Substitution"
+  Needs Investigation: "NeedsInvestigation"
+  BothBDL: "NotEvaluated"
+  Below10xDL: "NotEvaluated"
+  NotApplicable: "NotApplicable"
+  NotEvaluated: "NotEvaluated"
+
+crm_line_colors:
+  - "#0072B2"
+  - "#D55E00"
+  - "#009E73"
+  - "#CC79A7"
+  - "#56B4E9"
+  - "#E69F00"
+  - "#F0E442"
+
+matrix_contexts:
+  rock: "Duplicate precision in hard-rock material is typically reliable, and elevated RPD values may indicate subsampling variability or analytical precision limits."
+  soil: "These samples are soils, which commonly contain variable clay content, organics, and oxide coatings. Moderate variability in duplicate precision is not unusual, particularly for elements sensitive to adsorption or partial digestion."
+  vegetation: "Vegetation samples often show elevated duplicate variability due to heterogeneous organic content and incomplete digestion of resistant components."
+  till: "Glacial till is inherently heterogeneous, and duplicate RPD values may be elevated due to grain-size and mineralogical variability."
+  talus: "Talus fines commonly exhibit moderate duplicate variability due to mixed lithologies and variable weathering products."
+  stream_sediment: "Stream sediments are heterogeneous due to hydraulic sorting, and duplicate RPD values may be elevated for elements concentrated in minor mineral phases."
+  lake_sediment: "Lake sediments often contain fine clays and organics, which can influence duplicate precision through natural compositional variability."
+  default: "Duplicate precision for samples classified as '{matrix_type}' should be interpreted with consideration of matrix-specific heterogeneity and digestion behaviour."
+
+method_contexts:
+  AR-ICPMS: "Aqua regia digestion (HCl-HNO3) combined with ICP-MS detection provides high sensitivity for trace elements. The digestion effectively dissolves sulfides, carbonates, and other labile hosts, but does not fully decompose silicate minerals or refractory phases such as zircon, chromite, barite, or monazite. Elements hosted in resistant minerals may show systematic under-recovery. ICP-MS offers low detection limits but is susceptible to matrix-dependent polyatomic interferences depending on whether collision/reaction cell technology is used. Precision is typically 5-10% RSD for analytes present at >= 10x the detection limit."
+  AR-ICPOES: "Aqua regia digestion (HCl-HNO3) with ICP-OES detection is well suited for major, minor, and some trace elements in geochemical samples. The digestion dissolves sulfides and labile phases but does not fully break down silicates or refractory minerals. ICP-OES is generally more robust than ICP-MS in high-TDS matrices and less affected by polyatomic interferences, though detection limits are higher. Precision is commonly a few to ~10% RSD for analytes present at >= 10x the detection limit."
+  "4-Acid": "Four-acid digestion (HF-HClO4-HNO3-HCl) is a near-total decomposition method capable of breaking down most silicate, oxide, and sulfide minerals. Some highly refractory phases (e.g., zircon, chromite, barite) may remain partially undissolved, and certain elements (e.g., As, Sb, Cr, U, Au) can exhibit volatilization losses under specific conditions. Precision is typically a few to ~10% RSD for most elements at concentrations above ~10x the detection limit."
+  FA-AAS: "Fire assay with AAS finish provides high accuracy for Au and, in some methods, PGEs at low levels. Precision is commonly on the order of a few to ~10% RSD, with greater variability near the detection limit."
+  FA-ICP: "Fire assay with ICP-MS or ICP-OES finish provides high sensitivity for Au and, depending on the method, selected PGEs. The fire assay step ensures effective collection of precious metals, while the ICP finish offers lower detection limits and a broader dynamic range than AAS. Precision is typically a few to ~10% RSD for Au at concentrations above the method's practical detection limit."
+  PhotonAssay: "Photon Assay is a non-destructive, high-energy X-ray activation technique used primarily for gold and sometimes silver. Because no digestion is required, matrix effects are minimal and precision is typically excellent for well-prepared pulps. Coarse gold, nugget effects, and sample heterogeneity can dominate precision behaviour."
+  INAA: "Instrumental Neutron Activation Analysis (INAA) is a digestion-free technique with high potential accuracy for many lithophile and siderophile elements. Matrix effects are generally minimal; precision depends mainly on neutron flux and counting statistics. Duplicate variability often reflects mineralogical heterogeneity rather than analytical error."
+  default: "The {method_code} method was used. Typical performance characteristics include digestion completeness considerations, matrix effects, and concentration-dependent precision."

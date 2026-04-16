@@ -14,13 +14,13 @@ def classify_qc_row(sample_name):
         return "Blank"
 
     # Duplicate detection
-    if " ORIG" in name or name.endswith("ORIG"):
+    if " ORIG" in name or name.endswith("ORIG") or " ORIGINAL" in name:
         return "Duplicate_Orig"
 
-    if " DUP" in name or name.endswith("DUP"):
+    if " DUP" in name or name.endswith("DUP") or " DUPLICATE" in name:
         return "Duplicate_Dup"
 
-    # CRM detection
+    # CRM detection (default if not blank or duplicate)
     return "CRM"
 
 
